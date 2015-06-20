@@ -1,25 +1,22 @@
-# FeedHenry Hello World MBaaS Server
+# Image Stream Service
 
-This is a blank 'hello world' FeedHenry MBaaS. Use it as a starting point for building your APIs. 
+Service that streams image as either binary or base64 encoded data.
 
-# Group Hello World API
+# Group Image API
 
-# hello [/hello]
+# image [/image]
 
-'Hello world' endpoint.
+Image Stream endpoint.
 
-## hello [POST] 
-
-'Hello world' endpoint.
+## Image Stream [GET]
 
 + Request (application/json)
     + Body
             {
-              "hello": "world"
+              "url": "http://www.redhat.com/profiles/rh/themes/redhatdotcom/img/logo.png",
+              "base64" : "true|false - default = false"
             }
 
-+ Response 200 (application/json)
++ Response 200 (application/octet-stream)
     + Body
-            {
-              "msg": "Hello world"
-            }
+            Image in either binary or base64 encoded format
